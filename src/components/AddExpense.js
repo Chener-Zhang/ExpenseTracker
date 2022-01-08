@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ListContext } from "../AppContext";
 
 const AddExpense = () => {
+  const [item, setItem] = useContext(ListContext);
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log("button click");
+    setItem((previousItem) => [...previousItem, { name: "chener" }]);
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmitHandler}>
       <h2>Add Expense </h2>
-      <label for="name">Name</label>
+      <label htmlFor="name">Name</label>
       <input
         className="form-control"
         id="name"
@@ -13,7 +22,7 @@ const AddExpense = () => {
         type="text"
       />
 
-      <label for="amout">Amout</label>
+      <label htmlFor="amout">Amout</label>
       <input
         className="form-control"
         id="Amout"
@@ -21,7 +30,7 @@ const AddExpense = () => {
         required="required"
         type="text"
       />
-      <button type="submit" className="btn btn-primary mt-3">
+      <button onClicktype="submit" className="btn btn-primary mt-3">
         Submit
       </button>
     </form>
