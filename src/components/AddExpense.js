@@ -2,12 +2,11 @@ import React, { useContext } from "react";
 import { ListContext } from "../AppContext";
 
 const AddExpense = () => {
-  const [item, setItem] = useContext(ListContext);
+  const { budget } = useContext(ListContext);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("button click");
-    setItem((previousItem) => [...previousItem, { name: "chener" }]);
+    console.log(budget);
   };
 
   return (
@@ -30,9 +29,7 @@ const AddExpense = () => {
         required="required"
         type="text"
       />
-      <button onClicktype="submit" className="btn btn-primary mt-3">
-        Submit
-      </button>
+      <button className="btn btn-primary mt-3">Submit</button>
     </form>
   );
 };
