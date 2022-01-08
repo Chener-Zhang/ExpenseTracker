@@ -20,6 +20,8 @@ const AddExpense = () => {
       type: "ADD",
       payload: newExpense
     });
+    setName("");
+    setCost("");
   };
 
   return (
@@ -33,6 +35,7 @@ const AddExpense = () => {
         required="required"
         type="text"
         onChange={(event) => setName(event.target.value)}
+        value={name}
       />
 
       <label htmlFor="amout">Amout</label>
@@ -43,6 +46,7 @@ const AddExpense = () => {
         required="required"
         type="text"
         onChange={(event) => setCost(event.target.value)}
+        value={cost}
       />
       <button className="btn btn-primary mt-3">Submit</button>
     </form>
