@@ -4,7 +4,7 @@ import { ListContext } from "../AppContext";
 
 const ExpenseList = () => {
   const { expenses } = useContext(ListContext);
-  console.log(expenses);
+
   return (
     <div>
       <ul className="list-group">

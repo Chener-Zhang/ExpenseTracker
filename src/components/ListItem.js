@@ -1,7 +1,6 @@
 import React from "react";
 
 const ListItem = ({ props }) => {
-  console.log(props);
   return (
     <li className="list-group-item d-flex justify-content-between align-items-center">
       <h3>{props.name}</h3>

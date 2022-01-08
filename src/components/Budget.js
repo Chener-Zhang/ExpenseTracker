@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ListContext } from "../AppContext";
 
 const Budget = () => {
+  const { budget } = useContext(ListContext);
+
   return (
     <div className="alert alert-secondary">
-      {" "}
-      <span>Budget: £2000</span>
+      <span>Budget: £{budget}</span>
     </div>
   );
 };
