@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import { ListContext } from "../AppContext";
 
 const ExpenseTotal = () => {
-  const { budget, expenses } = useContext(ListContext);
-
-  console.log(expenses);
-  console.log(budget);
+  const { expenses } = useContext(ListContext);
+  const totalSpend = expenses.reduce((total, expense) => {
+    return (total = total + expense.cost);
+  }, 0);
   return (
     <div className="alert alert-primary">
-      <span>ExpenseTotal</span>
+      <span>Total Spend: {totalSpend}</span>
     </div>
   );
 };
