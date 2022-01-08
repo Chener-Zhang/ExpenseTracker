@@ -1,15 +1,17 @@
 import React, { useContext, useState } from "react";
 import { ListContext } from "../AppContext";
+import { v4 as uuidv4 } from "uuid";
 
 const AddExpense = () => {
   const [name, setName] = useState("");
   const [cost, setCost] = useState("");
-  const { dispatch, expenses } = useContext(ListContext);
+  const { dispatch } = useContext(ListContext);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
     const newExpense = {
+      id: uuidv4(),
       name: name,
       cost: parseInt(cost)
     };
