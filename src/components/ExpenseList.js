@@ -7,7 +7,7 @@ const ExpenseList = () => {
 
   return (
     <div>
-      <ul className="list-group">
+      <ul className="list-group list-group-numbered">
         {expenses.map((expense) => {
           return <ListItem key={expense.id} props={expense} />;
         })}
