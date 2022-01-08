@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ListContext } from "../AppContext";
 
 const AddExpense = () => {
   const { budget } = useContext(ListContext);
+  const [name, setName] = useState("");
+  const [cost, setCost] = useState("");
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
