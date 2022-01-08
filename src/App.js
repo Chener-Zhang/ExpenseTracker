@@ -25,8 +25,9 @@ export default function App() {
             <ExpenseTotal />
           </div>
         </div>
-        <ExpenseList />
         <AddExpense />
+        <br />
+        <ExpenseList />
       </div>
     </ListProvider>
   );

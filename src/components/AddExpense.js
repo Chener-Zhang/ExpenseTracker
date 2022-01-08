@@ -18,7 +18,6 @@ const AddExpense = () => {
       type: "ADD",
       payload: newExpense
     });
-    console.log(expenses);
   };
 
   return (
